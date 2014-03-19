@@ -1,0 +1,28 @@
+{
+  "name": "simplecinema",
+  "version": "0.0.0",
+  "description": "Source of simplecinema.com.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/simplecinema/simplecinema.com.git"
+  },
+  "keywords": [
+    "simple",
+    "cinema"
+  ],
+  "author": "Cai Guanhao <caiguanhao@gmail.com> (Choi Goon-ho)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/simplecinema/simplecinema.com/issues"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.4",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-connect": "~0.5.0",
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-contrib-less": "~0.10.0",
+    "grunt-contrib-uglify": "~0.2.7",
+    "grunt-contrib-watch": "~0.5.3"
+  }
+}
