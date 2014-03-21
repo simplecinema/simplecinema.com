@@ -65,7 +65,6 @@ $(document).ready(function(){
         /* Dont user paralax for tablet and mobile devices. */
         $('#page-welcome').parallax("0%", 0.2);
         $('#page-features').parallax("0%", 0.07);
-        $('#page-twitter').parallax("0%", 0.1);
     }
 
     /* Emulate touch on table/mobile touchstart. */
@@ -163,23 +162,6 @@ $(document).ready(function(){
         onMixLoad: null,
         onMixStart: null,
         onMixEnd: null
-    });
-
-    /**
-    *   PAGE | Twitter
-    *
-    *   Pull latest tweets from user.
-    *   Configuration: /plugins/twitter/index.php
-    */
-    $('#twitterfeed-slider').tweet({
-        modpath: 'plugins/twitter/',
-        username: 'TheGridelicious',
-        count: 3
-    });
-
-    $('#twitterfeed-slider').tweetCarousel({
-        interval: 7000,
-        pause: "hover"
     });
 
     /* Initialize Slider */

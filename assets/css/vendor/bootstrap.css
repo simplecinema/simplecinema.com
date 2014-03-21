@@ -476,61 +476,63 @@
   height: 50px;
 }
 
-.page-twitter {
+.page-before-blog {
   position: relative;
   background: url(../images/twitter/tw_bck.jpg) 50% 0 no-repeat fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  padding-top: 90px;
-  padding-bottom: 130px;
 }
 
-.page-twitter .container {
+.page-before-blog .line-divider {
+  color: #fff;
+}
+
+.page-before-blog .container {
   z-index: 2;
   position: relative;
 }
 
-.page-twitter .twitter-devider {
+.page-before-blog .twitter-devider {
   background: url(../images/css/divider_tw.png) no-repeat center bottom;
   padding-bottom: 60px;
 }
 
-.page-twitter .twitterfeed {
+.page-before-blog .twitterfeed {
   min-height: 55px;
   padding-top: 20px;
   position: relative;
 }
 
-.page-twitter .twitterfeed .tweet_time {
+.page-before-blog .twitterfeed .tweet_time {
   display: none;
 }
 
-.page-twitter .twitterfeed .tweet_time a {
+.page-before-blog .twitterfeed .tweet_time a {
   font-size: 11px;
   color: #fff;
   display: block;
 }
 
-.page-twitter .twitterfeed .tweet_text a:hover {
+.page-before-blog .twitterfeed .tweet_text a:hover {
   color: #5AA9CE;
   text-decoration: underline;
 }
 
-.page-twitter .twitterfeed .tweet_list {
+.page-before-blog .twitterfeed .tweet_list {
   padding: 0;
   margin: 0;
   list-style: none;
 }
 
-.page-twitter .twitterfeed .tweet_list li {
+.page-before-blog .twitterfeed .tweet_list li {
   padding: 0;
   margin: 0;
   list-style: none;
 }
 
-.page-twitter .twitterfeed .carousel-indicators {
+.page-before-blog .twitterfeed .carousel-indicators {
   bottom: -70px;
   left: 0;
   right: 0;
@@ -538,7 +540,7 @@
   top: auto;
 }
 
-.page-twitter .twitterfeed .carousel-indicators li {
+.page-before-blog .twitterfeed .carousel-indicators li {
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   border-radius: 8px;
@@ -7840,7 +7842,7 @@ a.label:hover,a.label:focus,a.badge:hover,a.badge:focus {
     display: block;
   }
 
-  #page-twitter .twitterfeed {
+  #page-before-blog .twitterfeed {
     min-height: 75px;
   }
 
@@ -8024,7 +8026,7 @@ a.label:hover,a.label:focus,a.badge:hover,a.badge:focus {
     display: block;
   }
 
-  #page-twitter .twitterfeed {
+  #page-before-blog .twitterfeed {
     min-height: 75px;
   }
 
