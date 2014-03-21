@@ -6,17 +6,17 @@ module.exports = function(grunt) {
         options: {
           hostname: '*',
           port: process.env.PORT || 3000,
-          base: [ 'assets', 'public' ]
+          base: [ 'assets', 'site' ]
         }
       }
     },
     clean: {
-      public: [ 'public' ]
+      site: [ 'site' ]
     },
     less: {
       simpleCinema: {
         files: {
-          'public/css/simple-cinema.css': [ 'assets/css/application.less' ]
+          'site/css/simple-cinema.css': [ 'assets/css/application.less' ]
         }
       }
     },
@@ -35,12 +35,39 @@ module.exports = function(grunt) {
         files: [ 'Gruntfile.js' ]
       },
       index: {
-        files: [ 'index.html' ],
-        tasks: [ 'copy-index' ]
+        files: [ 'layouts/*', 'pages/*', 'posts/**/*' ],
+        tasks: [ 'assemble' ]
+      }
+    },
+    assemble: {
+      options: {
+        pkg: '<%= pkg %>',
+        plugins: [ 'assemble-permalink' ],
+        helpers: [ 'handlebars-helper-prettify', 'helpers/helpers.js' ],
+        layoutdir: 'layouts',
+        layout: 'default.hbs',
+        production: false,
+        prettify: {
+          unformatted: [ 'a', 'sub', 'sup', 'b', 'i', 'u', 'textarea', 'pre' ]
+        }
+      },
+      blog: {
+        options: {
+          permalink: '/blog/{{ basename }}/'
+        },
+        files: {
+          'site/': [ 'pages/~blog*.hbs', 'posts/blog/**/*.md' ]
+        }
+      },
+      site: {
+        files: {
+          'site/': [ 'pages/*.hbs', '!pages/~*.hbs' ]
+        }
       }
     }
   });
 
+  grunt.loadNpmTasks('assemble');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-connect');
@@ -52,14 +79,9 @@ module.exports = function(grunt) {
   grunt.registerTask('default', [
     'clean',
     'less',
-    'copy-index',
+    'assemble',
     'connect',
     'watch'
   ]);
-
-  grunt.registerTask('copy-index', 'Copy index page', function() {
-    grunt.file.copy('index.html', 'public/index.html');
-    grunt.log.ok('Copied index.html to public/index.html.');
-  });
 
 };
