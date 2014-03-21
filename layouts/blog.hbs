@@ -1,0 +1,37 @@
+---
+layout: default.hbs
+permalink: /blog/
+---
+<div class="pages page-blog-list" id="page-blog-list">
+  <div class="container">
+    <header>
+      <h4 class="line-divider">Blog</h4>
+      <h1>纯映BLOG</h1>
+      <div class="row">
+        <div class="span8 offset2">
+          <div class="input-append">
+            <input class="span5" id="appendedInputButton" type="text" placeholder="Search Blog">
+            <button class="btn btn-primary sicon-search sicon-white" type="button"><i>Search</i></button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="row-fluid">
+      <div class="span8 blog-details">
+        {{>body}}
+      </div>
+      <div class="span4 blog-list-right">
+        <div class="block">
+          <h6>最近发表的文章</h6>
+          <ul class="simple-link-list">
+            {{#BlogList pages}}
+            <li>
+              <a href="{{data.permalink}}">{{data.title}}</a>
+            </li>
+            {{/BlogList}}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -35,14 +35,14 @@ module.exports = function(grunt) {
         files: [ 'Gruntfile.js' ]
       },
       index: {
-        files: [ 'layouts/*', 'pages/*', 'posts/**/*' ],
+        files: [ 'layouts/*', 'helpers/*', 'pages/*', 'posts/**/*' ],
         tasks: [ 'assemble' ]
       }
     },
     assemble: {
       options: {
         pkg: '<%= pkg %>',
-        plugins: [ 'assemble-permalink' ],
+        plugins: [ 'assemble-permalink', 'helpers/all-pages.js' ],
         helpers: [ 'handlebars-helper-prettify', 'helpers/helpers.js' ],
         layoutdir: 'layouts',
         layout: 'default.hbs',
@@ -53,6 +53,7 @@ module.exports = function(grunt) {
       },
       blog: {
         options: {
+          layout: 'blogpost.hbs',
           permalink: '/blog/{{ basename }}/'
         },
         files: {

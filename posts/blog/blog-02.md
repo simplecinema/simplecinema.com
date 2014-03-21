@@ -1,7 +1,7 @@
 ---
-permalink: /blog/web-site-redesigned/
-title: 网站改版
-date: 2014-1-1
+permalink: /blog/hello/
+title: 网站改版2
+date: 2014-2-1
 image: /images/blog/01_blog.jpg
 thumb: /images/blog/01_th_blog.jpg
 keywords: 网站 改版

@@ -1,5 +1,6 @@
 ---
 permalink: /
+homepage: true
 ---
 <!-- PAGE | WELCOME -->
 <div class="pages white paralax page-welcome" id="page-welcome">
@@ -363,89 +364,25 @@ permalink: /
     </header>
     <article>
       <ul class="thumbnails">
+        {{#eachReverseLimit all_blog 6}}
         <li class="span4">
-          <a href="./pages/blog/blog_1.html">
+          <a href="{{permalink}}">
             <img src="/images/blog/01_th_blog.jpg" alt="Treble">
           </a>
           <h5>
-            Blog Post Title<br/>
-            <small>April 10, 2013</small>
+            {{title}}<br/>
+            <small>{{formatDate date "%Y年%m月%d日"}}</small>
           </h5>
-          <p class="smallFontBy08">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua,consectetur adipisicing elit.</p>
           <div class="read-more">
-            <a href="./pages/blog/blog_1.html">Read More...</a>
+            <a href="{{permalink}}">阅读全文...</a>
           </div>
         </li>
-        <li class="span4">
-          <a href="./pages/blog/blog_2.html">
-            <img src="/images/blog/02_th_blog.jpg" alt="Treble">
-          </a>
-          <h5>
-            Blog Post Title<br/>
-            <small>April 10, 2013</small>
-          </h5>
-          <p class="smallFontBy08">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua,consectetur adipisicing elit.</p>
-          <div class="read-more">
-            <a href="./pages/blog/blog_2.html">Read More...</a>
-          </div>
-        </li>
-        <li class="span4">
-          <a href="./pages/blog/blog_3.html">
-            <img src="/images/blog/03_th_blog.jpg" alt="Treble">
-          </a>
-          <h5>
-            Blog Post Title<br/>
-            <small>April 10, 2013</small>
-          </h5>
-          <p class="smallFontBy08">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua,consectetur adipisicing elit.</p>
-          <div class="read-more">
-            <a href="./pages/blog/blog_3.html">Read More...</a>
-          </div>
-        </li>
-        <li class="span4">
-          <a href="./pages/blog/blog_4.html">
-            <img src="/images/blog/04_th_blog.jpg" alt="Treble">
-          </a>
-          <h5>
-            Blog Post Title<br/>
-            <small>April 10, 2013</small>
-          </h5>
-          <p class="smallFontBy08">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua,consectetur adipisicing elit.</p>
-          <div class="read-more">
-            <a href="./pages/blog/blog_4.html">Read More...</a>
-          </div>
-        </li>
-        <li class="span4">
-          <a href="./pages/blog/blog_5.html">
-            <img src="/images/blog/05_th_blog.jpg" alt="Treble">
-          </a>
-          <h5>
-            Blog Post Title<br/>
-            <small>April 10, 2013</small>
-          </h5>
-          <p class="smallFontBy08">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua,consectetur adipisicing elit.</p>
-          <div class="read-more">
-            <a href="./pages/blog/blog_5.html">Read More...</a>
-          </div>
-        </li>
-        <li class="span4">
-          <a href="./pages/blog/blog_6.html">
-            <img src="/images/blog/06_th_blog.jpg" alt="Treble">
-          </a>
-          <h5>
-            Blog Post Title<br/>
-            <small>April 10, 2013</small>
-          </h5>
-          <p class="smallFontBy08">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua,consectetur adipisicing elit.</p>
-          <div class="read-more">
-            <a href="./pages/blog/blog_6.html">Read More...</a>
-          </div>
-        </li>
+        {{/eachReverseLimit}}
       </ul>
     </article>
     <footer>
       <div class="show-more-cube">
-        <a href="./pages/blog/blog.html"><span>All Blog<br/>Posts</span></a>
+        <a href="/blog/"><span>查看所有<br/>文章</span></a>
       </div>
     </footer>
   </div>

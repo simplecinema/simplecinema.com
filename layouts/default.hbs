@@ -12,14 +12,13 @@
   <link rel="stylesheet" href="/css/simple-cinema.css" type="text/css">
 </head>
 
-<body>
-  <!-- NAVIGATION -->
-  <nav class="fixed-top" id="navigation">
+<body{{#if homepage}} class="homepage"{{/if}}>
+  <nav class="fixed-top{{#unless homepage}} fixed-visable{{/unless}}" id="navigation">
     <div class="container">
       <div class="row-fluid">
         <div class="span12 center">
           <!-- LOGO -->
-          <a class="brand pull-left" href="./">
+          <a class="brand pull-left" href="/">
             <img src="/images/logo.png" alt="Treble">
           </a>
           <!-- END LOGO -->
@@ -34,11 +33,11 @@
 
           <!-- MAIN MENU -->
           <ul id="main-menu" class="nav-collapse collapse">
-            <li><a href="#page-welcome">首页</a></li>
-            <li><a href="#page-about">关于我们</a></li>
-            <li><a href="#page-work">作品</a></li>
-            <li><a href="#page-blog">BLOG</a></li>
-            <li><a href="#page-contact">联系我们</a></li>
+            <li><a href="/#page-welcome">首页</a></li>
+            <li><a href="/#page-about">关于我们</a></li>
+            <li><a href="/#page-work">作品</a></li>
+            <li><a href="{{#if homepage}}/#page-blog{{else}}/blog/{{/if}}">BLOG</a></li>
+            <li><a href="/#page-contact">联系我们</a></li>
           </ul>
           <!-- END MAIN MENU -->
 
@@ -55,7 +54,6 @@
       </div>
     </div>
   </nav>
-  <!-- END NAVIGATION -->
 
   {{>body}}
 

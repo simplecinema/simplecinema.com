@@ -1,81 +1,32 @@
 ---
-layout: default.hbs
+layout: blog.hbs
 permalink: /blog/
 ---
-
-<!-- PAGE | BLOG -->
-<div class="pages page-blog-list" id="page-blog-list">
-  <div class="container">
-    <!-- Header -->
-    <header>
-      <h4 class="line-divider">Blog</h4>
-      <h1>Blog Posts</h1>
-      <div class="row">
-        <div class="span8 offset2">
-          <div class="input-append">
-            <input class="span5" id="appendedInputButton" type="text" placeholder="Search Blog">
-            <button class="btn btn-primary sicon-search sicon-white" type="button"><i>Search</i></button>
-          </div>
-        </div>
-      </div>
-    </header>
-    <!-- End Header -->
-
-    <div class="row-fluid">
-      <div class="span8 blog-details">
-        {{#eachIndex pages}}
-        <article>
-          <h5>
-            <a href="{{item.data.permalink}}">Blog Post Title</a><br/>
-            <small>April 10, 2013</small>
-          </h5>
-          <a href="{{item.data.permalink}}">
-            <img src="{{item.data.image}}">
-          </a>
-          <p>
-            {{item.data.excerpt}}
-          </p>
-          <div class="read-more">
-            <a href="{{item.data.permalink}}">Read More...</a>
-          </div>
-        </article>
-        {{/eachIndex}}
-        <div class="pagination center">
-          <ul>
-            <li><a href="#">Prev</a></li>
-            <li class="active"><span>1</span></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
-            <li><a href="#">Next</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="span4 blog-list-right">
-        <div class="block">
-          <h6>Lates blog posts</h6>
-          <ul class="simple-link-list">
-            <li>
-              <a href="blog_1.html" class="active">Blog post title 1</a>
-            </li>
-          </ul>
-        </div>
-        <div class="block">
-          <h6>Categories</h6>
-          <nav class="submenu">
-            <ul>
-              <li>
-                <a href="./blog.html" class="active">All</a>
-              </li>
-              <li>
-                <a href="./blog.html">Technology</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </div>
+{{#BlogList pages}}
+<article>
+  <h5>
+    <a href="{{data.permalink}}">{{data.title}}</a><br/>
+    <small>{{formatDate data.date "%Y年%m月%d日"}}</small>
+  </h5>
+  <a href="{{data.permalink}}">
+    <img src="{{data.image}}">
+  </a>
+  <p>
+    {{data.excerpt}}
+  </p>
+  <div class="read-more">
+    <a href="{{data.permalink}}">Read More...</a>
   </div>
+</article>
+{{/BlogList}}
+<div class="pagination center">
+  <ul>
+    <li><a href="#">Prev</a></li>
+    <li class="active"><span>1</span></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li><a href="#">Next</a></li>
+  </ul>
 </div>
-<!-- END PAGE | BLOG -->
