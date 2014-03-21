@@ -24,6 +24,10 @@ module.exports = function(grunt) {
       options: {
         livereload: true
       },
+      css: {
+        files: [ 'assets/css/**/*' ],
+        tasks: [ 'less' ]
+      },
       grunt: {
         files: [ 'Gruntfile.js' ]
       },
