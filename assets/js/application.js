@@ -115,7 +115,7 @@ $(document).ready(function(){
     *   Initialize slider for welcome page H1 message.
     */
    $('#welcome-messages ul').bxSlider({
-        mode: 'vertical',
+        mode: 'horizontal',
         auto: true,
         minSlides: 1,
         responsive: true,
@@ -123,7 +123,7 @@ $(document).ready(function(){
         pager: false,
         controls: false,
         useCSS: false,
-        pause: 10000
+        pause: 4000
     });
 
     /**

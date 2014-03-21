@@ -84,7 +84,7 @@
   z-index: 123123;
 }
 
-.page-welcome #welcome-messages h1 {
+.page-welcome #welcome-messages h3 {
   margin: 0;
   padding-top: 10px;
   padding-bottom: 5px;
@@ -335,6 +335,10 @@
   background: url(../images/css/divider_q.png) no-repeat 50% 0;
   margin-top: 100px;
   padding-top: 50px;
+}
+
+.page-about .about-items h5 small {
+  font-size: 14px
 }
 
 .page-about .about-items .item {
