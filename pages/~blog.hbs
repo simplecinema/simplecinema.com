@@ -8,14 +8,14 @@ permalink: /blog/
     <a href="{{data.permalink}}">{{data.title}}</a><br/>
     <small>{{formatDate data.date "%Y年%m月%d日"}}</small>
   </h5>
-  <a href="{{data.permalink}}">
+  <p><a href="{{data.permalink}}">
     <img src="{{data.image}}">
-  </a>
+  </a></p>
   <p>
     {{data.excerpt}}
   </p>
   <div class="read-more">
-    <a href="{{data.permalink}}">Read More...</a>
+    <a href="{{data.permalink}}">阅读全文...</a>
   </div>
 </article>
 {{/BlogList}}

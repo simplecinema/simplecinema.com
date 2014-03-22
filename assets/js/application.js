@@ -22,7 +22,7 @@ $(document).ready(function(){
 
     /* Centralize elements on page. */
     $('.centralized').centralized({
-      delay: 1500,
+      delay: 500,
       fadeSpeed: 500
     });
 
