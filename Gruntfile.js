@@ -108,6 +108,23 @@ module.exports = function(grunt) {
         posts: {
           work: grunt.file.readYAML('posts/work.yml'),
           work2: grunt.file.readYAML('posts/work2.yml')
+        },
+        makePermalinks: function(pages) {
+          var p = '';
+          for (var i = 0; i < pages; i++) {
+            p += '\n/blog/' + (i === 0 ? '' : 'page/' + (i + 1) + '/');
+          }
+          return p.trim();
+        },
+        blog: {
+          postsPerPage: 10,
+          count: function(what) {
+            var c = 0;
+            what.forEach(function(w) {
+              if (w.src.indexOf('posts/blog') === 0) c += 1;
+            });
+            return c;
+          }
         }
       },
       blog: {

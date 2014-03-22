@@ -1,8 +1,8 @@
 ---
 layout: blog.hbs
-permalink: /blog/
+permalink: <%= makePermalinks(Math.ceil(blog.count(pages)/blog.postsPerPage)) %>
 ---
-{{#BlogList pages}}
+{{#BlogList pages blog.postsPerPage}}
 <article>
   <h5>
     <a href="{{data.permalink}}">{{data.title}}</a><br/>
@@ -21,12 +21,6 @@ permalink: /blog/
 {{/BlogList}}
 <div class="pagination center">
   <ul>
-    <li><a href="#">Prev</a></li>
-    <li class="active"><span>1</span></li>
-    <li><a href="#">2</a></li>
-    <li><a href="#">3</a></li>
-    <li><a href="#">4</a></li>
-    <li><a href="#">5</a></li>
-    <li><a href="#">Next</a></li>
+    {{{BlogPages pages blog.postsPerPage}}}
   </ul>
 </div>
