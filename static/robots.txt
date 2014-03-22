@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /css/
+Disallow: /js/
+Disallow: /fonts/
+Disallow: /images/
+Disallow: /work/
+Disallow: /favicon.ico
+
+Sitemap: http://www.simplecinema.com/sitemap.xml

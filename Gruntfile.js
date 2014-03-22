@@ -36,6 +36,12 @@ module.exports = function(grunt) {
       tmp: [ 'assets/js/tmp' ]
     },
     less: {
+      options: {
+        cleancss: true,
+        stripBanners: true,
+        banner: '/*! Generated on <%= grunt.template.today("dddd, mmmm dS, ' +
+          'yyyy, h:MM:ss TT") %> */\n'
+      },
       simpleCinema: {
         files: {
           'site/css/simple-cinema.css': [ 'assets/css/application.less' ]
@@ -145,11 +151,11 @@ module.exports = function(grunt) {
   });
 
   grunt.loadNpmTasks('assemble');
+  grunt.loadNpmTasks('assemble-less');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
@@ -159,7 +165,8 @@ module.exports = function(grunt) {
     'uglify',
     'concat',
     'copy',
-    'make-blog-index'
+    'make-blog-index',
+    'clean:tmp'
   ]);
 
   grunt.registerTask('default', [
@@ -172,7 +179,6 @@ module.exports = function(grunt) {
   grunt.registerTask('make', [
     'common',
     'hash',
-    'clean:tmp',
     'assemble_in_production',
     'assemble'
   ]);
