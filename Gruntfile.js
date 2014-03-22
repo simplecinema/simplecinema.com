@@ -165,13 +165,13 @@ module.exports = function(grunt) {
     'uglify',
     'concat',
     'copy',
-    'make-blog-index',
     'clean:tmp'
   ]);
 
   grunt.registerTask('default', [
     'common',
     'assemble',
+    'make-blog-index',
     'connect',
     'watch'
   ]);
@@ -180,7 +180,8 @@ module.exports = function(grunt) {
     'common',
     'hash',
     'assemble_in_production',
-    'assemble'
+    'assemble',
+    'make-blog-index'
   ]);
 
   grunt.registerTask('assemble_in_production', 'Enter production mode.',
