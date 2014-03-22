@@ -1,4 +1,5 @@
 $(document).ready(function(){
+  FastClick.attach(document.body);
 
   if ($('body').is('.homepage')) {
 

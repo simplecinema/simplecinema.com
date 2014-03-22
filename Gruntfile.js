@@ -12,7 +12,8 @@ module.exports = function(grunt) {
       }
     },
     clean: {
-      site: [ 'site' ]
+      site: [ 'site' ],
+      tmp: [ 'assets/js/tmp' ]
     },
     less: {
       simpleCinema: {
@@ -38,6 +39,32 @@ module.exports = function(grunt) {
       index: {
         files: [ 'layouts/*', 'helpers/*', 'pages/*', 'posts/**/*' ],
         tasks: [ 'assemble' ]
+      }
+    },
+    uglify: {
+      javascripts: {
+        files: [{
+          expand: true,
+          cwd: 'assets/js',
+          src: [ '*.js', 'vendor/*.js', '!vendor/*.min.js', '!vendor/html5shiv.js' ],
+          dest: 'assets/js/tmp/'
+        }]
+      }
+    },
+    concat: {
+      options: {
+        banner: '/*! Generated on <%= grunt.template.today("dddd, mmmm dS, ' +
+          'yyyy, h:MM:ss TT") %> */\n'
+      },
+      js: {
+        files: {
+          'site/js/application.js': [
+            'assets/js/tmp/vendor/fastclick.js',
+            'assets/js/vendor/jquery-*.min.js',
+            'assets/js/vendor/*.min.js',
+            'assets/js/tmp/**/*.js'
+          ]
+        }
       }
     },
     assemble: {
@@ -108,6 +135,10 @@ module.exports = function(grunt) {
   grunt.registerTask('default', [
     'clean',
     'less',
+    'uglify',
+    'concat',
+    'hash',
+    'clean:tmp',
     'assemble',
     'make-blog-index',
     'connect',
@@ -119,6 +150,33 @@ module.exports = function(grunt) {
     blogposts = blogposts.reverse();
     grunt.file.write('site/blog/index.json', JSON.stringify(blogposts));
     grunt.log.ok('Generated blog index.')
+  });
+
+  grunt.registerTask('hash', 'Generate asset hash filenames', function() {
+    var path = require('path');
+    var crypto = require('crypto');
+    var fs = require('fs');
+    var sitedir = 'site';
+    var assets = grunt.file.expand({
+      cwd: sitedir
+    }, 'js/*.js', 'css/*.css');
+    var compiled_assets = grunt.config('assemble.options.compiled_assets') || {};
+    for (var i = 0; i < assets.length; i++) {
+      var old_filename = path.join(sitedir, assets[i]);
+      var js = fs.readFileSync(old_filename);
+      shasum = crypto.createHash('sha1');
+      shasum.update(js);
+      var hash = shasum.digest('hex');
+      var dot = old_filename.lastIndexOf('.');
+      if (dot === -1) dot = undefined;
+      var new_filename = old_filename.slice(0, dot);
+      new_filename += '-' + hash + old_filename.slice(dot);
+      fs.renameSync(old_filename, new_filename);
+      grunt.log.ok('File ' + old_filename + ' renamed to ' + new_filename);
+      var site = sitedir.length;
+      compiled_assets[old_filename.slice(site)] = new_filename.slice(site);
+    }
+    grunt.config('assemble.options.compiled_assets', compiled_assets);
   });
 
 };

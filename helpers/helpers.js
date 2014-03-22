@@ -4,6 +4,10 @@ module.exports.register = function(Handlebars, options) {
     return JSON.stringify(object);
   });
 
+  Handlebars.registerHelper('obj_val', function(object, property) {
+    return object ? object[property] : property;
+  });
+
   Handlebars.registerHelper('BlogList', function(context) {
     var options = arguments[arguments.length - 1];
     var ret = '';
