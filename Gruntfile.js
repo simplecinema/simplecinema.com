@@ -51,7 +51,8 @@ module.exports = function(grunt) {
           unformatted: [ 'a', 'sub', 'sup', 'b', 'i', 'u', 'textarea', 'pre' ]
         },
         posts: {
-          work: grunt.file.readYAML('posts/work.yml')
+          work: grunt.file.readYAML('posts/work.yml'),
+          work2: grunt.file.readYAML('posts/work2.yml')
         }
       },
       blog: {
@@ -67,6 +68,15 @@ module.exports = function(grunt) {
         options: {
           layout: 'work.hbs',
           pages: '<%= assemble.options.posts.work %>'
+        },
+        files: {
+          'site/' : []
+        }
+      },
+      work2: {
+        options: {
+          layout: 'work.hbs',
+          pages: '<%= assemble.options.posts.work2 %>'
         },
         files: {
           'site/' : []
