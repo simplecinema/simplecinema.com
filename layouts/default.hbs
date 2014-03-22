@@ -1,5 +1,5 @@
+{{#prettify}}
 <!DOCTYPE html>
-
 <html>
 
 <head>
@@ -9,8 +9,8 @@
   <meta name="keywords" content="{{#if keywords}}{{ keywords }}{{else}}{{join pkg.keywords ','}}{{/if}}" />
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <title>{{#if title}}{{ title }}-{{ pkg.NAME }}{{else}}{{ pkg.NAME }}-{{ pkg.keywords }}{{/if}}</title>
   <link rel="stylesheet" type="text/css" href="{{obj_val compiled_assets "/css/simple-cinema.css"}}">
+  <title>{{#if title}}{{ title }}-{{ pkg.NAME }}{{else}}{{ pkg.NAME }}-{{ pkg.keywords }}{{/if}}</title>
 </head>
 
 <body{{#if homepage}} class="homepage"{{/if}}>
@@ -18,21 +18,14 @@
     <div class="container">
       <div class="row-fluid">
         <div class="span12 center">
-          <!-- LOGO -->
           <a class="brand pull-left" href="/">
             <img src="/images/logo.png" alt="Treble">
           </a>
-          <!-- END LOGO -->
-
-          <!-- MOBILE MENU BUTTON -->
           <div class="mobile-menu" data-toggle="collapse" data-target=".nav-collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </div>
-          <!-- END MOBILE MENU BUTTON -->
-
-          <!-- MAIN MENU -->
           <ul id="main-menu" class="nav-collapse collapse">
             <li><a href="/#page-welcome">首页</a></li>
             <li><a href="/#page-about">关于我们</a></li>
@@ -40,23 +33,17 @@
             <li><a href="{{#if homepage}}/#page-blog{{else}}/blog/{{/if}}">BLOG</a></li>
             <li><a href="/#page-contact">联系我们</a></li>
           </ul>
-          <!-- END MAIN MENU -->
-
-          <!-- SOCIAL ICONS -->
           <div class="social-icons hover-big pull-right">
             <a href="#" class="sicon-facebook"><i>Facebook</i></a>
             <a href="#" class="sicon-twitter"><i>Twitter</i></a>
             <a href="#" class="sicon-youtube"><i>Youtube</i></a>
           </div>
-          <!-- END SOCIAL ICONS -->
         </div>
       </div>
     </div>
   </nav>
 
   {{>body}}
-
-  <!-- PAGE | CONTACT -->
   <div class="pages page-contact" id="page-contact">
     <div class="container">
       <header>
@@ -110,8 +97,6 @@
       </article>
     </div>
   </div>
-  <!-- END PAGE | CONTACT -->
-
   <div class="page-foot">
     <div class="container">
       <div class="copy">
@@ -129,10 +114,11 @@
   </div>
 
   <!--[if lt IE 9]>
-  <script src="/js/html5shiv.js"></script>
+  <script src="{{obj_val compiled_assets '/js/html5shiv.js'}}"></script>
   <![endif]-->
   <script src="{{obj_val compiled_assets '/js/application.js'}}"></script>
   {{#unless production}}<script src="http://localhost:35729/livereload.js"></script>{{/unless}}
 </body>
 
 </html>
+{{/prettify}}

@@ -7,8 +7,28 @@ module.exports = function(grunt) {
         options: {
           hostname: '*',
           port: process.env.PORT || 3000,
-          base: [ 'assets', 'site' ]
+          base: [ 'site' ]
         }
+      }
+    },
+    copy: {
+      images: {
+        files: {
+          'site/': [ 'images/**' ]
+        }
+      },
+      js: {
+        expand: true,
+        cwd: 'assets/js/vendor/',
+        src: 'html5shiv.js',
+        dest: 'site/js/'
+      },
+      statics: {
+        expand: true,
+        cwd: 'static/',
+        src: '**',
+        dest: 'site/',
+        dot: true
       }
     },
     clean: {
@@ -27,7 +47,8 @@ module.exports = function(grunt) {
         livereload: true
       },
       js: {
-        files: [ 'assets/js/**/*' ]
+        files: [ 'assets/js/**/*' ],
+        tasks: [ 'uglify', 'concat' ]
       },
       css: {
         files: [ 'assets/css/**/*' ],
@@ -132,18 +153,35 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
-  grunt.registerTask('default', [
+  grunt.registerTask('common', [
     'clean',
     'less',
     'uglify',
     'concat',
-    'hash',
-    'clean:tmp',
+    'copy',
+    'make-blog-index'
+  ]);
+
+  grunt.registerTask('default', [
+    'common',
     'assemble',
-    'make-blog-index',
     'connect',
     'watch'
   ]);
+
+  grunt.registerTask('make', [
+    'common',
+    'hash',
+    'clean:tmp',
+    'assemble_in_production',
+    'assemble'
+  ]);
+
+  grunt.registerTask('assemble_in_production', 'Enter production mode.',
+    function() {
+    grunt.config('assemble.options.production', true);
+    grunt.log.ok('Entered production mode.');
+  });
 
   grunt.registerTask('make-blog-index', '', function() {
     var blogposts = grunt.config('assemble.options.all_blog') || [];
