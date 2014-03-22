@@ -848,7 +848,7 @@
 
 #navigation #main-menu {
   display: inline-block;
-  float: none;
+  float: right;
   margin: 0 auto;
   padding: 0;
   position: relative;
@@ -8198,7 +8198,7 @@ a.label:hover,a.label:focus,a.badge:hover,a.badge:focus {
   }
 }
 
-@media(max-width:768px) {
+@media(max-width:767px) {
   body {
     padding-top: 0;
   }
