@@ -8,7 +8,23 @@ module.exports.register = function(Handlebars, options) {
     return object ? object[property] : property;
   });
 
-  Handlebars.registerHelper('BlogList', function(context, postsPerPage) {
+  Handlebars.registerHelper('BlogList', function(context) {
+    var options = arguments[arguments.length - 1];
+    var ret = '';
+
+    if (context && context.length > 0) {
+      for (var i = context.length - 1; i >= 0; i--) {
+        if (context[i].src.indexOf('posts/blog') !== 0) continue;
+        ret += options.fn(context[i]);
+      }
+    } else {
+      ret = options.inverse(this);
+    }
+
+    return ret;
+  });
+
+  Handlebars.registerHelper('BlogListWithPagination', function(context, postsPerPage) {
     var currentPage = this.permalink;
     var currentPageNum = currentPage.match(/\/page\/(\d+)\//);
     if (currentPageNum) {

@@ -2,7 +2,7 @@
 layout: blog.hbs
 permalink: <%= makePermalinks(Math.ceil(blog.count(pages)/blog.postsPerPage)) %>
 ---
-{{#BlogList pages blog.postsPerPage}}
+{{#BlogListWithPagination pages blog.postsPerPage}}
 <article>
   <h5>
     <a href="{{data.permalink}}">{{data.title}}</a><br/>
@@ -18,7 +18,7 @@ permalink: <%= makePermalinks(Math.ceil(blog.count(pages)/blog.postsPerPage)) %>
     <a href="{{data.permalink}}">阅读全文...</a>
   </div>
 </article>
-{{/BlogList}}
+{{/BlogListWithPagination}}
 <div class="pagination center">
   <ul>
     {{{BlogPages pages blog.postsPerPage}}}
