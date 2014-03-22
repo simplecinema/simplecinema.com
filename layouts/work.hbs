@@ -1,0 +1,27 @@
+<section class="portfolio-item-details">
+  <div class="row-fluid">
+    <div class="span8">
+      <iframe height="500" width="100%" src="http://player.youku.com/embed/{{youku}}" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="span4">
+      <div class="close-portfolio">
+        <span>&#10006;</span>
+        <div class="clearfix"></div>
+      </div>
+      <h5>{{title}}</h5>
+      <small>{{subtitle}}</small>
+      <article class="smallFontBy08">
+        {{#markdown}}{{../content}}{{/markdown}}
+      </article>
+      <div class="submenu">
+        <ul>
+          {{#each category}}
+          <li>
+            <span>{{this}}</span>
+          </li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

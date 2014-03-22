@@ -268,7 +268,7 @@ $( document ).ajaxComplete(function() {
       $(this).remove();
     });
 
-    window.location.hash= "!";
+    window.location.hash = '!';
     return false;
   });
 });

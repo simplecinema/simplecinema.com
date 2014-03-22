@@ -49,6 +49,9 @@ module.exports = function(grunt) {
         production: false,
         prettify: {
           unformatted: [ 'a', 'sub', 'sup', 'b', 'i', 'u', 'textarea', 'pre' ]
+        },
+        posts: {
+          work: grunt.file.readYAML('posts/work.yml')
         }
       },
       blog: {
@@ -58,6 +61,15 @@ module.exports = function(grunt) {
         },
         files: {
           'site/': [ 'pages/~blog*.hbs', 'posts/blog/**/*.md' ]
+        }
+      },
+      work: {
+        options: {
+          layout: 'work.hbs',
+          pages: '<%= assemble.options.posts.work %>'
+        },
+        files: {
+          'site/' : []
         }
       },
       site: {

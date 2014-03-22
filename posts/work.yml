@@ -1,0 +1,35 @@
+- filename: "/work/work-1.html"
+  data:
+    youku: XNjU2MzY0MTg0
+    image: /images/work/work-1.jpg
+    title: 西澳婚礼特别版
+    subtitle: “wait a while”，念念不忘的时光。
+    category:
+      - 实拍广告
+      - 品牌宣传片
+      - 活动花絮
+      - 纪录片
+    content: |
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+- filename: "/work/work-2.html"
+  data:
+    youku: XNjM0Njg3NTc2
+    image: /images/work/work-2.jpg
+    title: 2013.10.03 G&X
+    subtitle: 2013.10.03 G&X
+    category:
+      - 活动花絮
+      - 纪录片
+    content: |
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.

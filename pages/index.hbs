@@ -203,103 +203,33 @@ homepage: true
             <a href="#" class="plugin-filter active" data-filter="all">显示全部</a>
           </li>
           <li>
-            <a href="#" class="plugin-filter" data-filter="commercial">实拍广告</a>
+            <a href="#" class="plugin-filter" data-filter="实拍广告">实拍广告</a>
           </li>
           <li>
-            <a href="#" class="plugin-filter" data-filter="promotion">品牌宣传片</a>
+            <a href="#" class="plugin-filter" data-filter="品牌宣传片">品牌宣传片</a>
           </li>
           <li>
-            <a href="#" class="plugin-filter" data-filter="behind-the-scenes">活动花絮</a>
+            <a href="#" class="plugin-filter" data-filter="活动花絮">活动花絮</a>
           </li>
           <li>
-            <a href="#" class="plugin-filter" data-filter="documentary">纪录片</a>
+            <a href="#" class="plugin-filter" data-filter="纪录片">纪录片</a>
           </li>
         </ul>
       </nav>
     </header>
     <article>
       <ul class="thumbnails plugin-filter-elements portfolio-items">
-        <li class="span4 mix commercial promotion">
-          <a href="#pages/portfolio/project_1.html" data-destination="portfolio-items" data-insert="before">
-            <img src="/images/work/01_th.jpg" alt="Treble">
+        {{#each posts.work}}
+        <li class="span4 mix {{join data.category " "}}">
+          <a href="#{{filename}}" data-destination="portfolio-items" data-insert="before">
+            <img src="{{data.image}}">
             <div class="details">
-              <h3 class="project-title">作品标题</h3>
-              <small>作品描述</small>
+              <h3 class="project-title">{{data.title}}</h3>
+              <small>{{data.subtitle}}</small>
             </div>
           </a>
         </li>
-        <li class="span4 mix promotion behind-the-scenes commercial">
-          <a href="#pages/portfolio/project_2.html" data-destination="portfolio-items" data-insert="before">
-            <img src="/images/work/02_th.jpg" alt="Treble">
-            <div class="details">
-              <h3 class="project-title">作品标题</h3>
-              <small>作品描述</small>
-            </div>
-          </a>
-        </li>
-        <li class="span4 mix documentary commercial">
-          <a href="#pages/portfolio/project_3.html" data-destination="portfolio-items" data-insert="before">
-            <img src="/images/work/03_th.jpg" alt="Treble">
-            <div class="details">
-              <h3 class="project-title">作品标题</h3>
-              <small>作品描述</small>
-            </div>
-          </a>
-        </li>
-        <li class="span4 mix documentary">
-          <a href="#pages/portfolio/project_4.html" data-destination="portfolio-items" data-insert="before">
-            <img src="/images/work/04_th.jpg" alt="Treble">
-            <div class="details">
-              <h3 class="project-title">作品标题</h3>
-              <small>作品描述</small>
-            </div>
-          </a>
-        </li>
-        <li class="span4 mix documentary behind-the-scenes promotion">
-          <a href="#pages/portfolio/project_5.html" data-destination="portfolio-items" data-insert="before">
-            <img src="/images/work/05_th.jpg" alt="Treble">
-            <div class="details">
-              <h3 class="project-title">作品标题</h3>
-              <small>作品描述</small>
-            </div>
-          </a>
-        </li>
-        <li class="span4 mix documentary">
-          <a href="#pages/portfolio/project_6.html" data-destination="portfolio-items" data-insert="before">
-            <img src="/images/work/06_th.jpg" alt="Treble">
-            <div class="details">
-              <h3 class="project-title">作品标题</h3>
-              <small>作品描述</small>
-            </div>
-          </a>
-        </li>
-        <li class="span4 mix commercial promotion behind-the-scenes">
-          <a href="#pages/portfolio/project_7.html" data-destination="portfolio-items" data-insert="before">
-            <img src="/images/work/07_th.jpg" alt="Treble">
-            <div class="details">
-              <h3 class="project-title">作品标题</h3>
-              <small>作品描述</small>
-            </div>
-          </a>
-        </li>
-        <li class="span4 mix documentary commercial">
-          <a href="#pages/portfolio/project_8.html" data-destination="portfolio-items" data-insert="before">
-            <img src="/images/work/08_th.jpg" alt="Treble">
-            <div class="details">
-              <h3 class="project-title">作品标题</h3>
-              <small>作品描述</small>
-            </div>
-          </a>
-        </li>
-        <li class="span4 mix commercial promotion">
-          <a href="#pages/portfolio/project_9.html" data-destination="portfolio-items" data-insert="before">
-            <img src="/images/work/09_th.jpg" alt="Treble">
-            <div class="details">
-              <h3 class="project-title">作品标题</h3>
-              <small>作品描述</small>
-            </div>
-          </a>
-        </li>
+        {{/each}}
       </ul>
     </article>
     <!-- End Article -->
@@ -339,28 +269,6 @@ homepage: true
           </div>
         </div>
       </div>
-      <nav class="submenu">
-        <ul>
-          <li>
-            <a href="./pages/blog/blog.html">所有</a>
-          </li>
-          <li>
-            <a href="./pages/blog/blog.html">Technology</a>
-          </li>
-          <li>
-            <a href="./pages/blog/blog.html">Design</a>
-          </li>
-          <li>
-            <a href="./pages/blog/blog.html">Future trends</a>
-          </li>
-          <li>
-            <a href="./pages/blog/blog.html">Photography</a>
-          </li>
-          <li>
-            <a href="./pages/blog/blog.html">Other</a>
-          </li>
-        </ul>
-      </nav>
     </header>
     <article>
       <ul class="thumbnails">
@@ -373,9 +281,6 @@ homepage: true
             {{title}}<br/>
             <small>{{formatDate date "%Y年%m月%d日"}}</small>
           </h5>
-          <div class="read-more">
-            <a href="{{permalink}}">阅读全文...</a>
-          </div>
         </li>
         {{/eachReverseLimit}}
       </ul>
