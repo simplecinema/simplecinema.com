@@ -1,5 +1,6 @@
 {
   "name": "simplecinema",
+  "production_url": "http://www.simplecinema.com",
   "version": "0.0.0",
   "description": "Source of simplecinema.com.",
   "repository": {

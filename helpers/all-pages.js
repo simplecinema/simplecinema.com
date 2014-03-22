@@ -10,6 +10,9 @@ module.exports = function(params, callback) {
   var allblog = [];
 
   for (var i = 0; i < pages.length; i++) {
+    if (pages[i].dest.indexOf('/work/') !== -1) {
+      continue;
+    }
     allpages.push(pages[i].data.permalink);
     if (pages[i].src.slice(0, 11) === 'posts/blog/') {
       allblog.push({

@@ -1,6 +1,7 @@
 module.exports = function(grunt) {
 
   grunt.initConfig({
+    pkg: grunt.file.readJSON('package.json'),
     connect: {
       server: {
         options: {
@@ -42,7 +43,7 @@ module.exports = function(grunt) {
     assemble: {
       options: {
         pkg: '<%= pkg %>',
-        plugins: [ 'assemble-permalink', 'helpers/all-pages.js' ],
+        plugins: [ 'assemble-permalink', 'helpers/all-pages.js', 'helpers/trim.js' ],
         helpers: [ 'handlebars-helper-prettify', 'helpers/helpers.js' ],
         layoutdir: 'layouts',
         layout: 'default.hbs',
@@ -85,6 +86,11 @@ module.exports = function(grunt) {
       site: {
         files: {
           'site/': [ 'pages/*.hbs', '!pages/~*.hbs' ]
+        }
+      },
+      sitemap: {
+        files: {
+          'site/': [ 'pages/~sitemap.hbs' ]
         }
       }
     }
