@@ -1,16 +1,19 @@
 {
+  "private": true,
   "name": "simplecinema",
+  "NAME": "纯映文化传播有限公司",
   "production_url": "http://www.simplecinema.com",
   "version": "0.0.0",
-  "description": "Source of simplecinema.com.",
+  "description": "广东顺德纯映文化传播有限公司拍摄、制作专业的企业广告创意宣传片、大型活动纪录片等。",
+  "keywords": [
+    "广东顺德高清拍摄",
+    "企业广告宣传片",
+    "大型活动纪录片"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/simplecinema/simplecinema.com.git"
   },
-  "keywords": [
-    "simple",
-    "cinema"
-  ],
   "author": "Cai Guanhao <caiguanhao@gmail.com> (Choi Goon-ho)",
   "license": "MIT",
   "bugs": {
