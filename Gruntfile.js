@@ -81,8 +81,16 @@ module.exports = function(grunt) {
     'clean',
     'less',
     'assemble',
+    'make-blog-index',
     'connect',
     'watch'
   ]);
+
+  grunt.registerTask('make-blog-index', '', function() {
+    var blogposts = grunt.config('assemble.options.all_blog') || [];
+    blogposts = blogposts.reverse();
+    grunt.file.write('site/blog/index.json', JSON.stringify(blogposts));
+    grunt.log.ok('Generated blog index.')
+  });
 
 };

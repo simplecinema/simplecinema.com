@@ -15,7 +15,8 @@ module.exports = function(params, callback) {
       allblog.push({
         title: pages[i].data.title,
         permalink: pages[i].data.permalink,
-        date: pages[i].data.date
+        date: pages[i].data.date,
+        excerpt: pages[i].data.excerpt ? pages[i].data.excerpt.trim() : undefined
       });
     }
   }

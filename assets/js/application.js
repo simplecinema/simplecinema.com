@@ -174,6 +174,63 @@ $(document).ready(function(){
 
   }
 
+  $('#keywords').keypress(function(e) {
+    if(e.which == 13) {
+      window.location.href = '/blog/search/#' + $('#keywords').val();
+    }
+  });
+
+  $('#search').click(function() {
+    window.location.href = '/blog/search/#' + $('#keywords').val();
+  });
+
+  function prettydate(date) {
+    date = new Date(date)
+    return date.getFullYear() + '年' + (date.getMonth() + 1) + '月' + date.getDate() + '日';
+  }
+
+  var searchresults = $('#searchresults');
+  if (searchresults.length === 1) {
+    $.getJSON('/blog/index.json', function(posts) {
+      var hashchange = function() {
+        var keyword = window.location.hash.substr(1).trim();
+        $('#keywords').val(keyword);
+        searchresults.empty();
+        searchresults.append('<h3>搜索结果</h3>');
+        var resultcount = 0;
+        $.each(posts, function(key, post) {
+          if (!keyword) return true;
+          if (post.title.toLowerCase().indexOf(keyword) === -1 &&
+            post.excerpt.toLowerCase().indexOf(keyword) === -1) {
+            return true;
+          }
+          searchresults.append('<article>' +
+'<h5>' +
+'<a href="' + post.permalink + '">' + post.title + '</a><br/>' +
+'<small>' + prettydate(post.date) + '</small>' +
+'</h5>' +
+'<p>' +
+post.excerpt +
+'</p>' +
+'<div class="read-more">' +
+'<a href="' + post.permalink + '">阅读全文...</a>' +
+'</div>' +
+'</article>');
+          resultcount += 1;
+        });
+        if (resultcount === 0) {
+          if (keyword) {
+            searchresults.append('<h4>抱歉，找不到包含关键字“' + keyword + '”的文章。</h4>');
+          } else {
+            searchresults.append('<h4>请提供关键字。</h4>');
+          }
+        }
+      };
+      $(window).on("hashchange", hashchange);
+      hashchange();
+    });
+  }
+
   /* Make embeded videos responsive. */
   $.fn.responsivevideos();
 
