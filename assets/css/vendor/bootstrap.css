@@ -348,7 +348,7 @@
   overflow: hidden;
 }
 
-.page-about .about-items .item .hover {
+/*.page-about .about-items .item .hover {
   display: none;
 }
 
@@ -359,9 +359,23 @@
 .page-about .about-items .item:hover .nothr {
   display: none;
 }
-
+*/
 .page-about .about-items .item:hover .about-overlay {
   background-color: rgba(244, 89, 78, 0.5);
+}
+
+.page-about .about-items .item .about-overlay .about-text {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin-top: -20px;
+  padding: 10px;
+}
+
+.page-about .about-items .item:hover .about-overlay .about-text {
+  display: block;
 }
 
 .page-about .about-items .about-overlay {
@@ -380,6 +394,7 @@
   transition: background-color 0.3s ease-in-out;
 }
 
+/*
 .page-about .about-items .item .about-overlay .social-icons {
   opacity: 0;
   filter: alpha(opacity=0);
@@ -404,7 +419,7 @@
 
 .page-about .about-items .about-overlay .social-icons i {
   display: inline-block;
-}
+}*/
 
 
 .swiper-slide:not(.swiper-slide-active) img {
