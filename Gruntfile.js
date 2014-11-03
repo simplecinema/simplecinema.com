@@ -108,32 +108,6 @@ module.exports = function(grunt) {
         posts: {
           work: grunt.file.readYAML('posts/work.yml'),
           work2: grunt.file.readYAML('posts/work2.yml')
-        },
-        makePermalinks: function(pages) {
-          var p = '';
-          for (var i = 0; i < pages; i++) {
-            p += '\n/blog/' + (i === 0 ? '' : 'page/' + (i + 1) + '/');
-          }
-          return p.trim();
-        },
-        blog: {
-          postsPerPage: 10,
-          count: function(what) {
-            var c = 0;
-            what.forEach(function(w) {
-              if (w.src.indexOf('posts/blog') === 0) c += 1;
-            });
-            return c;
-          }
-        }
-      },
-      blog: {
-        options: {
-          layout: 'blogpost.hbs',
-          permalink: '/blog/{{ basename }}/'
-        },
-        files: {
-          'site/': [ 'pages/~blog*.hbs', 'posts/blog/**/*.md' ]
         }
       },
       work: {
@@ -188,7 +162,6 @@ module.exports = function(grunt) {
   grunt.registerTask('default', [
     'common',
     'assemble',
-    'make-blog-index',
     'connect',
     'watch'
   ]);
@@ -197,21 +170,13 @@ module.exports = function(grunt) {
     'common',
     'hash',
     'assemble_in_production',
-    'assemble',
-    'make-blog-index'
+    'assemble'
   ]);
 
   grunt.registerTask('assemble_in_production', 'Enter production mode.',
     function() {
     grunt.config('assemble.options.production', true);
     grunt.log.ok('Entered production mode.');
-  });
-
-  grunt.registerTask('make-blog-index', '', function() {
-    var blogposts = grunt.config('assemble.options.all_blog') || [];
-    blogposts = blogposts.reverse();
-    grunt.file.write('site/blog/index.json', JSON.stringify(blogposts));
-    grunt.log.ok('Generated blog index.')
   });
 
   grunt.registerTask('hash', 'Generate asset hash filenames', function() {
