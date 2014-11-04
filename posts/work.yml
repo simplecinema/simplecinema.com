@@ -1,35 +1,208 @@
 - filename: "/work/work-1.html"
   data:
-    youku: XNjU2MzY0MTg0
+    youku: XNzU5MjIwMjY4
     image: /images/work/work-1.jpg
-    title: 西澳婚礼特别版
-    subtitle: “wait a while”，念念不忘的时光。
+    title: 别眨眼！CP3线下活动宣传片
+    subtitle: Nike
     category:
-      - 实拍广告
-      - 品牌宣传片
-      - 活动花絮
-      - 纪录片
+      - 影视宣传广告
     content: |
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+       “穿JORDAN球鞋去拍摄JORDAN广告，JORDAN CP3运球速度挑战赛，Don’t blind！”
 
 - filename: "/work/work-2.html"
   data:
-    youku: XNjM0Njg3NTc2
+    youku: XNzk2NTg1NTA4
     image: /images/work/work-2.jpg
-    title: 2013.10.03 G&X
-    subtitle: 2013.10.03 G&X
+    title: 碧桂园创喜邦盛家居宣传片
+    subtitle: 房地产
     category:
-      - 活动花絮
-      - 纪录片
+      - 影视宣传广告
     content: |
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      “创喜邦盛，继承碧桂园五星级理念，你的五星级家居管家。”
+
+- filename: "/work/work-3.html"
+  data:
+    youku: XODA4NjAyMzA0
+    image: /images/work/work-3.jpg
+    title: Heroes Cocktail Lounge短片
+    subtitle: 酒吧文化
+    category:
+      - 影视宣传广告
+    content: |
+      “两杯特饮要表达的情感，不言而喻。到Heroes Cocktail Lounge感受酒吧文化。”
+
+- filename: "/work/work-4.html"
+  data:
+    youku: XNzU5MDgyMDY4
+    image: /images/work/work-4.jpg
+    title: JPC集品概念
+    subtitle: JPC
+    category:
+      - 影视宣传广告
+    content: |
+      “不像星期六晚亲友集结的大喧嚣，也没有星期一中午20分钟工作餐的冷暴力——JPC集品概念”
+
+- filename: "/work/work-5.html"
+  data:
+    youku: XNzU0OTgxNzc2
+    image: /images/work/work-5.jpg
+    title: 中日街球对抗
+    subtitle: 纪录片
+    category:
+      - 企业（产品）专题片
+    content: |
+      “2012年春，北京还有点寒冷，第一次见到传说中的日本Somecity，一种漫画人物的即视感。"
+
+- filename: "/work/work-6.html"
+  data:
+    youku: XNzU1NjcxNDA0
+    image: /images/work/work-6.jpg
+    title: 对开门冰箱新品发布宣传片
+    subtitle: 奥马
+    category:
+      - 企业（产品）专题片
+    content: |
+      “欧洲品质，韩国技术，中国制造”，继续为奥马献上一份绵力。"
+
+- filename: "/work/work-7.html"
+  data:
+    youku: XNzU1NDgzMDMy
+    image: /images/work/work-7.jpg
+    title: 兆能移动电源
+    subtitle: 淘宝
+    category:
+      - 企业（产品）专题片
+    content: |
+      “阿里巴巴上市，电商你做对了吗？淘宝产品展示片低成本制作案例。"
+
+- filename: "/work/work-8.html"
+  data:
+    youku: XNzU1MTMzNDI0
+    image: /images/work/work-8.jpg
+    title: 必达智能锁
+    subtitle: 微电影
+    category:
+      - 微电影
+    content: |
+      “钥匙，打开的不止一扇门，而是两个不被理解的世界。”
+
+- filename: "/work/work-9.html"
+  data:
+    youku: XODEyMjcyOTAw
+    image: /images/work/work-9.jpg
+    title: CHARYA造型摄影机构
+    subtitle: 形象片
+    category:
+      - 新媒体影视项目策划
+    content: |
+      CHARYA电视广告45秒版本，继续大玩水底拍摄。
+
+- filename: "/work/work-10.html"
+  data:
+    youku: XNzU1NDg5MTYw
+    image: /images/work/work-10.jpg
+    title: 插入耳机，忘了世界一小时
+    subtitle: 升格测试
+    category:
+      - 新媒体影视项目策划
+    content: |
+      究竟有多慢？融帧4000fps，内部测试，5d3慢动作升格。
+
+- filename: "/work/work-11.html"
+  data:
+    youku: XNzg2NzY4NzI0
+    image: /images/work/work-11.jpg
+    title: 用特别的视觉去感受顺德
+    subtitle: 延时·顺德
+    category:
+      - 新媒体影视项目策划
+    content: |
+      用一张张图片堆起来的短片，大家随意感受一下。
+
+- filename: "/work/work-12.html"
+  data:
+    youku: XNzU0OTg2MDY4
+    image: /images/work/work-12.jpg
+    title: 不忘初心
+    subtitle: 首映
+    category:
+      - 活动项目花絮
+    content: |
+      “作为发布的第一条片子，选择了这部很早期的作品，送给我们自己。”
+
+- filename: "/work/work-13.html"
+  data:
+    youku: XODA1MTM4ODM2
+    image: /images/work/work-13.jpg
+    title: JORDAN XX9 线下活动花絮
+    subtitle: Nike
+    category:
+      - 活动项目花絮
+    content: |
+      “JORDAN XX9,非凡响应速度与卓越缓震的结合，革新FLIGHTPLATE设计。空前轻盈，旷世飞翔。”
+
+- filename: "/work/work-14.html"
+  data:
+    youku: XODAwNTUyODQ4
+    image: /images/work/work-14.jpg
+    title: 一舞倾城最终回
+    subtitle: 街舞
+    category:
+      - 活动项目花絮
+    content: |
+      “佛山地区最有代表性的街舞年度盛事，YOU GOTTA KEEP ON DANCING！”
+
+- filename: "/work/work-15.html"
+  data:
+    youku: XODAwOTgzMTYw
+    image: /images/work/work-15.jpg
+    title: 别眨眼！CP3线下活动花絮
+    subtitle: Nike
+    category:
+      - 活动项目花絮
+    content: |
+      “比速度？比技巧？JORDAN CP3运球速度挑战赛，Don’t blind！”
+
+- filename: "/work/work-16.html"
+  data:
+    youku: XNzU1NDcwMjY0
+    image: /images/work/work-16.jpg
+    title: 第五届全国花式篮球精英挑战赛
+    subtitle: 街球革命
+    category:
+      - 活动项目花絮
+    content: |
+      “街球革命Vol.5,让我们用炸场来回忆那些汗可以拧出一桶水的年代。”
+
+- filename: "/work/work-17.html"
+  data:
+    youku: XODAwOTcxODgw
+    image: /images/work/work-17.jpg
+    title: MELO线下活动花絮
+    subtitle: Nike
+    category:
+      - 活动项目花絮
+    content: |
+      “你出手快？还是压哨声来得快？穿上MELO起飞出手绝杀。”
+
+- filename: "/work/work-18.html"
+  data:
+    youku: XODAwNTA2NTA0
+    image: /images/work/work-18.jpg
+    title: KOBE9线下活动花絮
+    subtitle: Nike
+    category:
+      - 活动项目花絮
+    content: |
+      “NIKE KOBE9”从科比一代战靴到九代的大师之路,FLYKNIT技术，轻质强韧，引爆极速。
+
+- filename: "/work/work-19.html"
+  data:
+    youku: XNzU5MDM3NDk2
+    image: /images/work/work-19.jpg
+    title: JPC Making of——沈阳行
+    subtitle: 幕后·我们
+    category:
+      - 活动项目花絮
+    content: |
+      "如果我们的剧本中也有旧约和新约，请允许我们告诉你造物前的一幕。"
