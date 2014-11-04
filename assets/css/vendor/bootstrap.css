@@ -863,6 +863,10 @@ footer {
   background-image: url("../images/css/sicon-set.png");
 }
 
+.sicon-blank i {
+  visibility: hidden;
+}
+
 .sicon-search i {
   background-position: 3px 0;
 }
